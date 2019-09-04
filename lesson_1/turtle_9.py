@@ -1,0 +1,35 @@
+# Нарисуйте «цветок» из окружностей. Используйте функцию, рисующую окружность. 
+import time
+
+import turtle
+import math as m
+
+b = 1
+loops = 6    
+n = 200                 
+r = 50    
+i = 0              
+                        
+turtle.shape('turtle')
+def more_agles(n):
+    q=360/n
+    L = 2 * r * m.sin(m.pi / n)
+    while n>0:
+        turtle.forward(L)
+        if b > 0:
+            turtle.left(q)
+        else:
+            turtle.right(q)
+        n -= 1
+       
+while i < loops:
+    more_agles(n)
+    if i%2 == 1:
+        turtle.left(60)
+    b *= -1
+    i += 1
+                         
+    
+
+
+time.sleep(1)
